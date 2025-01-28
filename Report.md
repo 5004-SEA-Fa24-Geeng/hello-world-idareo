@@ -7,11 +7,66 @@ The following report contains questions you need to answer as part of your submi
 Please link your UML design file here. See resources in the assignment on how to
 link an image in markdown. You may also use [mermaid] class diagrams if you prefer, if so, include the mermaid code here.  You DO NOT have to include Greeting.java as part of the diagram, just the AlohaWorld application that includes: [AlohaWorld.java], [Greeter.java], and [ConsoleView.java].
 
+mermaid
+---
+title: Aloha World UML
+---
+classDiagram
+direction LR
+AlohaWorld --> Greeter
+AlohaWorld --> ConsoleView : uses
+ConsoleView --> Greeter : uses
+class AlohaWorld {
+- AlohaWorld()
++ main(string[] args): static void
+}
+class Greeter {
+- name: final String
+- locality: int
+- localitylist: static List<String>
+- HAWAII: statiic final int
+- CHINA: statiic final int
+- ITALY: statiic final int
+- DEFAULT_LOCALITY: statiic final int
++ Greeter(string name, int locality)
++getName(): string
++getLocality(): int
++setLocality(int locality): void
++greet(): String
++greet(boolean asciiOnly): String
++getLocalityString(): String
++hashcode(): int
++equals(Object obj): boolean
++toString(): String
++getLocaliyList(): Static List<String>
+}
+class ConsoleView {
+- Scanner: static final Scanner
+-Locality_options: static final List<String>
+-ConsoleView()
++getName(): static String
++getLocality(): static int
++checkRunAgain(): static boolean
++printGreeting(string greeting): static void
+
+
+    }
+
 
 
 ### Program Flow
 Write a short paragraph detailing the flow of the program in your own words. This is to help you understand / trace the code (and give you practice of something called a code walk that will be required in this course).
-
+   The AlohaWorld.java holds the main function as a static void, allowing it to be called without creating an object of the class. 
+   The ‘void’ allows it to run without requiring a return at the end. The main proceeds to call on the ConsoleView class that is used to interact with the client. 
+   The ConsoleView is then assigned to the name variable by using the getName() method. 
+   This method allows the program to ask the user for input and then proceeds to scan the input, strip it of excess white space and return it to the method. 
+   After this, the main then assigns the locality by calling on the getlocality() method in the ConsoleView.Java class. Once both variables are assigned, 
+   the main program calls on the Greeter.Java class and creates a new instance of the greeter class. The aforementioned name and 
+   locality variables are then passed through the Greeter(String name, Int locality) method. This handles any exceptions that could occur due to the size of the locality. 
+   If the Greeter method runs without throwing the IllegalArgumentException, then the new instance is passed back to the ConsoleView.printgreeting() method which will print the greeting. 
+   The final step in the main calls on the consoleview.checkrunagain() method. This is used to ask the user if they would like to be greeted again. If false, 
+   the program accesses the getlocality function within the ConsolleView class and sets the locality within the greeter class via the setlocaliy() method. It then prints the greeting again, 
+   until the user inputs ‘yes’ to quit.
 
 ## Assignment Questions
 
