@@ -42,15 +42,25 @@ public class Greeting {
      */
 
     public Greeting(int localityID, String localityName){
+        // initialize all other variables to set default strings when called and avoid errors
         this.localityID = localityID;
         this.localityName = localityName;
         this.greeting = "Hello";
-        this.asciiGreeting = this.greeting;
-        this.unicodeGreeting = this.greeting;
+        this.asciiGreeting = "Hello";
+        this.unicodeGreeting = "Hello";
         this.formatStr = "%s, %s!";
     }
 
+    /**
+     *
+     * @param localityID ID of locality
+     * @param localityName Name of locality
+     * @param greeting greeting using ascii characters
+     * Method overload - Constructor 02
+     */
+
     public Greeting(int localityID, String localityName, String greeting){
+        // initialize all other variables to set default strings when called and avoid errors
         this.localityID = localityID;
         this.localityName = localityName;
         this.greeting = (greeting != null) ? greeting : "Hello";
@@ -58,6 +68,16 @@ public class Greeting {
         this.unicodeGreeting = this.greeting;
         this.formatStr = "%s, %s!";
     }
+
+    /**
+     *
+     * @param localityID ID of locality
+     * @param localityName Name of locality
+     * @param asciiGreeting greeting using ascii characters
+     * @param unicodeGreeting greeting using uni-code characters
+     * @param formatStr format string for the greeting
+     *          Method overload - Constructor 03
+     */
 
     public Greeting(int localityID, String localityName, String asciiGreeting, String unicodeGreeting, String formatStr){
         this.localityID = localityID;
@@ -67,32 +87,56 @@ public class Greeting {
         this.formatStr = formatStr;
     }
 
+    /**
+     *
+     * @return localityID
+     */
     public int getLocalityID(){
         return this.localityID;
     }
 
+    /**
+     *
+     * @return localityName
+     */
     public String getLocalityName(){
         return this.localityName;
     }
 
+    /**
+     *
+     * @return ascii greeting
+     */
     public String getAsciiGreeting(){
         return this.asciiGreeting;
     }
 
+    /**
+     *
+     * @return unicode greeting
+     */
     public String getUnicodeGreeting(){
         return unicodeGreeting;
 
     }
 
+    /**
+     *
+     * @return format string depending on if there is no greeting or a unicode greeting
+     */
     public String getFormatStr(){
 
-        if (asciiGreeting != null){
+        if (greeting == null && unicodeGreeting != null ){
             return String.format(formatStr, "%s", unicodeGreeting);
         }
-
-        return String.format(formatStr, greeting, "%s");
+        return String.format(formatStr, greeting,"%s");
     }
 
+    /**
+     *
+     * @param asciiOnly if ascii greeting is true, return ascii greeting
+     * @return return default greeting is ascii greeting is false
+     */
     public String getFormatStr(boolean asciiOnly) {
 
         if (asciiOnly) {
@@ -102,12 +146,21 @@ public class Greeting {
         return String.format(formatStr, greeting,"%s");
     }
 
+    /**
+     * override toString() as a safety precaution
+     * @return localityID, localityName, asciiGreeting and unicodeGreeting as one string
+     */
     @Override
     public String toString() {
+
         return String.format("{localityID:%d, localityName:\"%s\", asciiGreeting:\"%s\", unicodeGreeting:\"%s\"}",
                 localityID, localityName, asciiGreeting, unicodeGreeting);
     }
 
+    /**
+     *
+     * @param args passes appropriate arguments for methods called
+     */
 
     public static void main(String[] args) {
 
