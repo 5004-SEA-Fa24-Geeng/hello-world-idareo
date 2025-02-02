@@ -23,11 +23,11 @@ class AlohaWorld {
 class Greeter {
 - name: final String
 - locality: int
-- localitylist: static List<String>
-- HAWAII: statiic final int
-- CHINA: statiic final int
-- ITALY: statiic final int
-- DEFAULT_LOCALITY: statiic final int
+- localityList: static List<String>
+- HAWAII: static final int
+- CHINA: static final int
+- ITALY: static final int
+- DEFAULT_LOCALITY: static final int
 + Greeter(string name, int locality)
 +getName(): string
 +getLocality(): int
@@ -38,7 +38,7 @@ class Greeter {
 +hashcode(): int
 +equals(Object obj): boolean
 +toString(): String
-+getLocaliyList(): Static List<String>
++getLocalityList(): Static List<String>
 }
 class ConsoleView {
 - Scanner: static final Scanner
@@ -73,6 +73,9 @@ Write a short paragraph detailing the flow of the program in your own words. Thi
 1. List three additional java syntax items you didn't know when reading the code.  (make sure to use * for the list items, see example below, the backtick marks are used to write code inline with markdown)
    
    * (example) `final class`
+   * NumberFormatException
+   * Integer.parseInt
+   * SCANNER.nextLine().toLowerCase()
 
 2. For each syntax additional item listed above, explain what it does in your own words and then link a resource where you figured out what it does in the references section. 
 

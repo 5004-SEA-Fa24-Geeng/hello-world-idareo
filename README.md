@@ -11,7 +11,9 @@ capacity. No
 
 * one per row, add more if needed
   
-Did you use any external resources (you do not have to cite in class material)? (Cite them below) None 
+Did you use any external resources (you do not have to cite in class material)? (Cite them below) 
+
+- I used google for further explanations
 
 * one row per resource
 
