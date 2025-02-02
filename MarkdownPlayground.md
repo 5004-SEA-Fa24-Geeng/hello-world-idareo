@@ -21,3 +21,52 @@ Mermaid is a markdown language that allows you to create diagrams. You can find 
 
 <!-- start your playground code under this dashed line -->
 ----
+
+# Things learnt:
+1. The best practices for **markdown syntax** and how to write items for my desired output 
+2. how to create a link: [Mermaid Tutorial 01](https://mermaid.js.org/intro/syntax-reference.html)
+3. How to link images
+
+title: Aloha World UML
+---
+classDiagram
+direction LR
+AlohaWorld --> Greeter
+AlohaWorld --> ConsoleView : uses
+ConsoleView --> Greeter : uses
+class AlohaWorld {
+- AlohaWorld()
++ main(string[] args): static void
+  }
+  class Greeter {
+- name: final String
+- locality: int
+- localityList: static List<String>
+- HAWAII: static final int
+- CHINA: static final int
+- ITALY: static final int
+- DEFAULT_LOCALITY: static final int
++ Greeter(string name, int locality)
+  +getName(): string
+  +getLocality(): int
+  +setLocality(int locality): void
+  +greet(): String
+  +greet(boolean asciiOnly): String
+  +getLocalityString(): String
+  +hashcode(): int
+  +equals(Object obj): boolean
+  +toString(): String
+  +getLocalityList(): Static List<String>
+  }
+  class ConsoleView {
+- Scanner: static final Scanner
+  -Locality_options: static final List<String>
+  -ConsoleView()
+  +getName(): static String
+  +getLocality(): static int
+  +checkRunAgain(): static boolean
+  +printGreeting(string greeting): static void
+
+
+    }
+
