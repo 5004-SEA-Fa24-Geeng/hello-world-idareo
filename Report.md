@@ -71,33 +71,33 @@ Write a short paragraph detailing the flow of the program in your own words. Thi
 ## Assignment Questions
 
 1. List three additional java syntax items you didn't know when reading the code.  (make sure to use * for the list items, see example below, the backtick marks are used to write code inline with markdown)
-   
-   * (example) `final class`
+
    * NumberFormatException
    * Integer.parseInt
    * SCANNER.nextLine().toLowerCase()
 
 2. For each syntax additional item listed above, explain what it does in your own words and then link a resource where you figured out what it does in the references section. 
 
-    * (example) The `final` keyword when used on a class prevents the class from being subclassed. This means that the class cannot be extended by another class. This is useful when you want to prevent a class from being modified or extended[^1] . It is often the standard to do this when a class only contains static methods such as driver or utility classes. Math in Java is an example of a final class[^2] .
+    * Integer.parseInt: This converts the user input into an integer value 
+    * NumberFormatException: This a common Java exception. In the code, it  works simultaneously with the parseInt() method within a try/catch block to ensure that the input is a number.
+    * SCANNER.nextLine().toLowerCase(): this reads "scans" the user input and converts it all to lower case letters
 
 3. What does `main` do in Java? 
 
-    Go ahead and answer the question as a short paragraph / few sentences. Notice the indent, this is valid because it is a list item. (erase this line before writing.)
-
+   'Main' is a method within java that the JVM uses to execute the program. It is typically accompanied by the syntax "public static void". This makes it accessible outside the class. 'Static' allows it be run just by calling the class and 'void' is syntax that recognises it does not return a value.
 
 4. What does `toString()` do in Java? Why should any object class you create have a `toString()` method?
 
-    Same as above - short answer
+    The 'toSting()' method is used to return the string representation of objects. It is automatically called when the print function is called. However, you can also override it to pass a custom string aka print statement. It can also be used to combine more than one string argument. 
 
 5. What is javadoc style commenting? What is it used for? 
 
-    Same as above - short answer
+    javadoc style commenting is used to create a package that holds information on the java file. It essentially creates a document that holds information on classes & their description. Within each class, it further breaks down all the methods used(including descriptions and arguments). It is an effective way for multiple people to work on a file and have all information readily available for understanding. Especially if working in groups/larger projects.
 
 
 6. Describe Test Driving Development (TDD) in your own words. 
 
-    Same as above - short answer    
+    TDD is a common practice within coding that allows coders to limit the amount of either run-time or compile-time errors within their code. It is typically done simultaneously with the code assembly. code is updated to ensure the tests work and vice-versa.   
 
 7. Go to the [Markdown Playground](MarkdownPlayground.md) and add at least 3 different markdown elements you learned about by reading the markdown resources listed in the document. Additionally you need to add a mermaid class diagram (of your choice does not have to follow the assignment. However, if you did use mermaid for the assignment, you can just copy that there). Add the elements into the markdown file, so that the formatting changes are reserved to that file. 
 
@@ -108,9 +108,10 @@ These questions require deeper thinking of the topic. We don't expect 100% corre
 
 
 1. Why would we want to keep interaction with the client contained to ConsoleView?
+   This will limit the amount of front-end input handling the program will have to deal with. it will most likely reduce the risk of errors. Also, when thinking of HCI, it is typically a more pleasurable experience for the user if everything is compiled in one interface
 
-
-2. Right now, the application isn't very dynamic in that it can be difficult to add new languages and greetings without modifying the code every time. Just thinking programmatically,  how could you make the application more dynamic? You are free to reference Geeting.java and how that could be used in your design.
+2. Right now, the application isn't very dynamic in that it can be difficult to add new languages and greetings without modifying the code every time. Just thinking programmatically,  how could you make the application more dynamic? You are free to reference Greeting.java and how that could be used in your design.
+      I would add a new function that uses a menu option to ask if a new language needs to be Inputed. This will then take in input and handle it accurately, ensuring that it is in the same format as the current greeting.java structure when called.
 
 
 
